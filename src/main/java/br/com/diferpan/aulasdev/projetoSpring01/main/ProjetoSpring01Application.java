@@ -31,7 +31,7 @@ public class ProjetoSpring01Application implements CommandLineRunner {
 		Scanner sc = new Scanner(System.in);
 		String name = "";
 		double grossSalary = 0;
-		System.out.println("------Programa inicializado------");
+		System.out.println("------Programa inicialiSzado------");
 		System.out.println("Name:");
 		name = sc.nextLine();
 
