@@ -14,6 +14,6 @@ public class ProjetoSpring01Application implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		System.out.println("Hello Word, first sprint boot project!");
+		System.out.println("Teste commit texto inicial");
 	}
 }
