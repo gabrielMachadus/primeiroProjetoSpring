@@ -7,11 +7,19 @@ import br.com.diferpan.aulasdev.projetoSpring01.services.TaxService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
 
 import java.util.Scanner;
 
 @SpringBootApplication
+@ComponentScan({"br.com.diferpan.aulasdev.projetoSpring01"})
 public class ProjetoSpring01Application implements CommandLineRunner {
+
+	SalaryService salaryService ;
+
+	public ProjetoSpring01Application(SalaryService salaryService) {
+		this.salaryService = salaryService;
+	}
 
 	public static void main(String[] args) {
 
@@ -23,6 +31,7 @@ public class ProjetoSpring01Application implements CommandLineRunner {
 		Scanner sc = new Scanner(System.in);
 		String name = "";
 		double grossSalary = 0;
+		System.out.println("------Programa inicializado------");
 		System.out.println("Name:");
 		name = sc.nextLine();
 
@@ -34,7 +43,7 @@ public class ProjetoSpring01Application implements CommandLineRunner {
 
 		TaxService taxService = new TaxService();
 		PensionService pensionService = new PensionService();
-		SalaryService salaryService = new SalaryService(taxService, pensionService);
+		salaryService = new SalaryService(taxService, pensionService);
 		System.out.println("------Salário liquido:"+salaryService.netSalary(employee)+"------");
 
 		System.out.println("------Programa Finalizado------");
